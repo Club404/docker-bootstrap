@@ -1,0 +1,3 @@
+[submodule "projects/portainer"]
+	path = projects/portainer
+	url = git@github.com:Club404/portainer.git
