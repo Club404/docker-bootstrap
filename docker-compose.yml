@@ -89,7 +89,7 @@ services:
   portainer:
     container_name: "portainer"
     extends:
-      file: ./components/portainer/docker-compose.yml
+      file: ./projects/portainer/docker-compose.yml
       service: portainer
     depends_on:
       - portainer-api
