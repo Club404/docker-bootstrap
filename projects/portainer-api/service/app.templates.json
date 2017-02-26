@@ -209,6 +209,32 @@
     ]
   },
   {
+    "title": "Ungit",
+    "description": "Git web UI that makes it easy to manage your sources",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
+    "image": "example.com:5000/ungit:latest",
+    "env": [
+      {
+        "name": "SSH_AUTH_SOCK",
+        "label": "Authentication socket",
+        "value": "/ssh-agent"
+      },
+      {
+        "name": "SERVICE_NAME",
+        "label": "Service group name",
+        "value": "ungit"
+      },
+      {
+        "name": "SERVICE_TAGS",
+        "label": "Specify interactions via tags",
+        "value": "app"
+      }
+    ],
+    "ports": [
+      "8448/tcp"
+    ]
+  },
+  {
     "title": "Auto Updates",
     "description": "Automatically update running containers",
     "logo": "http://www.eticaretci.com/images/icon-guncelleme.png",

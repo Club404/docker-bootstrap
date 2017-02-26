@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  ungit:
+    image: "example.com:5000/ungit:latest"
+    environment:
+     - SERVICE_NAME=ungit
+     - SERVICE_TAGS=app
+     - SSH_AUTH_SOCK=/ssh-agent
+    ports:
+      - "8448:8448"
+    volumes:
+     - ../../:/var/www
+     - /etc/ssh/ssh_config:/etc/ssh/ssh_config
+     - ~/.ssh:/home/ungit/.ssh
+     - $SSH_AUTH_SOCK:/ssh-agent
+
+
