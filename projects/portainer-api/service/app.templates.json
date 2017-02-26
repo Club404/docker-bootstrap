@@ -1,10 +1,52 @@
 [
   {
-    "title": "Auto Updates",
-    "description": "Automatically update running containers",
-    "logo": "http://www.eticaretci.com/images/icon-guncelleme.png",
-    "image": "centurylink/watchtower:latest",
+    "title": "Test Py",
+    "description": "Simple endpoint written in python and returns an html response",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg",
+    "image": "example.com:5000/test-py:latest",
+    "env": [
+      {
+        "name": "SERVICE_NAME",
+        "label": "Service group name",
+        "value": "test-py"
+      },
+      {
+        "name": "SERVICE_TAGS",
+        "label": "Specify interactions via tags",
+        "value": "app"
+      },
+      {
+        "name": "TEST_STORAGE_REDIS",
+        "label": "Name of the redis storage endpoint",
+        "value": "test-py-db"
+      }
+    ],
     "ports": [
+      "5000/tcp"
+    ]
+  },
+  {
+    "title": "Redis",
+    "description": "Open-source in-memory data structure store",
+    "logo": "https://cloudinovasi.id/assets/img/logos/redis.png",
+    "image": "redis:alpine",
+    "env": [
+      {
+        "name": "SERVICE_NAME",
+        "label": "Service group name",
+        "value": "redis"
+      },
+      {
+        "name": "SERVICE_TAGS",
+        "label": "Specify interactions via tags",
+        "value": "api"
+      }
+    ],
+    "ports": [
+      "6379/tcp"
+    ],
+    "volumes": [
+      "/data"
     ]
   },
   {
@@ -141,30 +183,6 @@
     ]
   },
   {
-    "title": "Redis",
-    "description": "Open-source in-memory data structure store",
-    "logo": "https://cloudinovasi.id/assets/img/logos/redis.png",
-    "image": "redis:alpine",
-    "env": [
-      {
-        "name": "SERVICE_NAME",
-        "label": "Service group name",
-        "value": "redis"
-      },
-      {
-        "name": "SERVICE_TAGS",
-        "label": "Specify interactions via tags",
-        "value": "api"
-      }
-    ],
-    "ports": [
-      "6379/tcp"
-    ],
-    "volumes": [
-      "/data"
-    ]
-  },
-  {
     "title": "Grafana",
     "description": "Open-source graphing and dashboard tool",
     "logo": "http://cyphree.architektur-bau.hs-augsburg.de/grafana/public/img/grafana_icon.svg",
@@ -188,6 +206,14 @@
     ],
     "ports": [
       "3000/tcp"
+    ]
+  },
+  {
+    "title": "Auto Updates",
+    "description": "Automatically update running containers",
+    "logo": "http://www.eticaretci.com/images/icon-guncelleme.png",
+    "image": "centurylink/watchtower:latest",
+    "ports": [
     ]
   }
 ]

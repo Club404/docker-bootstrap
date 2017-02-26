@@ -1,7 +1,7 @@
 version: '2'
 services:
   test-py:
-    image: "example.com:5000/tests-py:latest"
+    image: "example.com:5000/test-py:latest"
     environment:
      - TEST_STORAGE_REDIS=test-py-db
      - SERVICE_NAME=test-py
