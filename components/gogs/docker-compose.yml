@@ -4,18 +4,23 @@ services:
   gogs:
     image: "gogs/gogs:latest"
     environment:
-     - SERVICE_NAME=gogs
-     - SERVICE_TAGS=app:3000
-     #- DB_TYPE=postgres
-     #- HOST=gogs-db
-     #- NAME=gogs
-     #- USER=lala
-     #- PASSWD=lala
+      - SERVICE_NAME=gogs
+      - SERVICE_TAGS=app:3000
+      - APPLICATION_URL=https://example.com:10080/
+      - SSH_PORT=10022
+      - HTTP_PORT=10080
+      - DB_TYPE=postgres
+      - HOST=gogs-db
+      - NAME=gogs
+      - USER=gogs
+      - PASSWD=1Gogs2
     ports:
       - "10022:22"
       - "10080:3000"
+    depends_on:
+      - gogs-db
     volumes:
-     - .data/vcs:/data
+      - .data/vcs:/data
 
   gogs-db:
     container_name: "gogs-db"
@@ -24,7 +29,7 @@ services:
      - SERVICE_NAME=gogs-db
      - SERVICE_TAGS=db
      - POSTGRES_DB=gogs
-     - POSTGRES_USER=lala
-     - POSTGRES_PASSWORD=lala
+     - POSTGRES_USER=gogs
+     - POSTGRES_PASSWORD=1Gogs2
     volumes:
      - .data/db:/data
