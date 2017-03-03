@@ -1,6 +1,6 @@
 {
   "name": "docker-bootstrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bootstraps a docker environment for production or development",
   "main": "index.js",
   "repository": {
