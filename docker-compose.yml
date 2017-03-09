@@ -7,7 +7,7 @@ services:
     container_name: "portal"
     image: "example.com:5000/portal:latest"
     volumes:
-     - ./projects/portal/www:/tmp/www:rw
+     - ./projects/portal/www:/tmp/app/www:rw
      - ./projects/portal/www:/var/www/vhosts/example.com/:ro
   # -----------------------------------------------------------------------------------------
 
