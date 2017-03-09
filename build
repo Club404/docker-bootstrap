@@ -15,7 +15,7 @@ function build_image ()
 function build_recursive ()
 {
     scan_dir=${1}
-    find "${scan_dir}" -maxdepth 3 -name "Dockerfile" -print0 |
+    find "${scan_dir}" -maxdepth 3 -name "Dockerfile" -not -path "*/node_modules*" -not -path "*/bower_components*" -print0 |
     while IFS= read -r -d $'\0' src; do
         tag=${src}
         tag=${tag#${scan_dir}/}
