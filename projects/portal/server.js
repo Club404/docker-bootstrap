@@ -3,7 +3,7 @@
 const express = require('express');
 
 // Constants
-const PORT = 80;
+const PORT = process.env.API_PORT || 80;
 const cacheTime = 86400000 * 7; // 7 Days
 
 // App

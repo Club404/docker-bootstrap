@@ -6,6 +6,8 @@ services:
   portal:
     container_name: "portal"
     image: "example.com:5000/portal:latest"
+    ports:
+     - "8888:80"
     volumes:
      - ./projects/portal/www:/tmp/app/www:rw
      - ./projects/portal/www:/var/www/vhosts/example.com/:ro
