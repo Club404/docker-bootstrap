@@ -1,0 +1,21 @@
+mariadb:
+  image: mariadb:10.0.23
+  environment:
+    MYSQL_ROOT_PASSWORD: istotallysecure
+    MYSQL_DATABASE: rundeck
+    MYSQL_USER: rd
+    MYSQL_PASSWORD: rd
+
+rundeck:
+  image: elcolio/rundeck
+  environment:
+    MYSQL_USER: rd
+    MYSQL_PASSWORD: rd
+    DEFAULT_ADMIN_USER: admin
+    DEFAULT_ADMIN_PASSWORD: derpN0zzle
+    # Uncomment the below if running locally
+    SERVER_URL: http://127.0.0.1:4440
+  links:
+    - mariadb:mysql
+  ports:
+    - 4440:4440
